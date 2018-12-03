@@ -2,6 +2,15 @@
 
 The course project for the third course, Getting and Cleaning Data, in Coursera's Data Science specialization. Deals with human activity recognition using smartphones.
 
+### Viewing the output in R
+
+It is recommended to view the analysis file, UCI_HAR_analysis.txt, in R or Excel. To view it in R, set your working directory to the correct location, and then use the following code:
+
+    analysis <- read.table("UCI_HAR_analysis.txt")
+    View(analysis)
+
+You may need to resize your window to see all four columns.
+
 ### Links (from instructions):
 
 [Data description](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
@@ -10,7 +19,7 @@ The course project for the third course, Getting and Cleaning Data, in Coursera'
 
 ### Original data
 
-UCI_HAR_analysis is an analysis of a [dataset](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) that contains information from an experiment in the field of wearable computing. In this experiment, 30 volunteers ("subjects") were selected, and each performed six activities -- walking, walking upstairs, walking downstairs, sitting, standing, and laying -- with a smartphone attached to their hip. The smartphone's accelerometer and gyroscope recorded information at regular time intervals while the subjects performed their activities, generating several records for each subject-activity pair. For each such record, hundreds of statistics -- means, standard deviations, mins, maxs, etc. -- were calculated. These data were later split by volunteer into two groups: test, which contained 9 volunteers (30% of them), and train, which contained 21 volunteers (70% of them). For more information, see README.txt in the above dataset.
+UCI_HAR_analysis.txt is an analysis of a [dataset](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) that contains information from an experiment in the field of wearable computing. In this experiment, 30 volunteers ("subjects") were selected, and each performed six activities -- walking, walking upstairs, walking downstairs, sitting, standing, and laying -- with a smartphone attached to their hip. The smartphone's accelerometer and gyroscope recorded information at regular time intervals while the subjects performed their activities, generating several records for each subject-activity pair. For each such record, hundreds of statistics -- means, standard deviations, mins, maxs, etc. -- were calculated. These data were later split by volunteer into two groups: test, which contained 9 volunteers (30% of them), and train, which contained 21 volunteers (70% of them). For more information, see README.txt in the above dataset.
 
 In the original dataset, vectors of subjects, activities, and statistic names are contained in files separate from the main data. Names of statistics are contained in features.txt, names of subjects are contained in subject_train.txt and subject_test.txt, and the main data are contained in two main data tables, X_train.txt and X_test.txt. Additionally, vectors of activity _numbers_ (integers from 1 to 6) are provided in y_train.txt and y_test.txt, and the six strings corresponding to the numbers are recorded in activity_labels.txt. In my analysis table, UCI_HAR_analysis.txt, the two main tables are combined back together; all activities are recorded as strings; and subjects, activity strings, and statistic names are included directly in the table.
 
