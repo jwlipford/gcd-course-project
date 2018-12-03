@@ -6,17 +6,17 @@
 require(dplyr)
 require(tidyr)
 
-# url <- paste0( "https://d396qusza40orc.cloudfront.net/",
-#                "getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip" )
-# if( !file.exists("./data") ){ dir.create("./data") }
-# # I am not sure why the examples do not use dir.exists instead of file.exists,
-# # but I followed their lead.
-# 
-# download.file( url, destfile = "./data/Dataset.zip" )
-# datedownloaded <- date()
-# print( paste0( "Date downloaded: ", datedownloaded ) )
-# 
-# unzip( "./data/Dataset.zip", exdir = "./data" )
+url <- paste0( "https://d396qusza40orc.cloudfront.net/",
+               "getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip" )
+if( !file.exists("./data") ){ dir.create("./data") }
+# I am not sure why the examples do not use dir.exists instead of file.exists,
+# but I followed their lead.
+
+download.file( url, destfile = "./data/Dataset.zip" )
+datedownloaded <- date()
+print( paste0( "Date downloaded: ", datedownloaded ) )
+
+unzip( "./data/Dataset.zip", exdir = "./data" )
 setwd( "./data/UCI HAR Dataset" ) # will change back later
 
 col_names <- tolower(
@@ -74,5 +74,5 @@ means <- combined %>%
          group_by( subject, activity ) %>%
          summarize_all( mean ) %>%
          gather( statistic, mean, -subject, -activity )
-write.table( means, file = "UCI_HAR_analysis.txt" )
+write.table( means, file = "UCI_HAR_analysis.txt", row.name = FALSE )
 print( "Analysis saved as UCI_HAR_analysis.txt" )
